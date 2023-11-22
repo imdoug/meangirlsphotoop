@@ -55,7 +55,7 @@ function Home() {
 
   function photoCountdown() {
     setStep(2)
-    const myTimeout = setTimeout(takePhoto,2700);
+    const myTimeout = setTimeout(takePhoto,2500);
   }
 
   const generateDownloadLink = (b) =>{
@@ -113,18 +113,18 @@ function Home() {
      };
 
     // Perform the POST request
-      // fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
-      //     .then(response => response.text())
-      //     .then(result => {
-      //         console.log(result);
-      //         let res = result
-      //         setData(res.data)
-      //         //event.sender.send('form-submission-successful', result);
-      //     })
-      //     .catch(error => {
-      //         console.log('error', error);
-      //         //event.sender.send('form-submission-failed', error);
-      //     });
+      fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
+          .then(response => response.text())
+          .then(result => {
+              //console.log(result);
+              //let res = result
+              //setData(res.data)
+              //event.sender.send('form-submission-successful', result);
+          })
+          .catch(error => {
+              //console.log('error', error);
+              //event.sender.send('form-submission-failed', error);
+          });
   }
   const restart  = () =>{
     const canvas  = document.querySelector('canvas')
