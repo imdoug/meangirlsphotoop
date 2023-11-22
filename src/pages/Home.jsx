@@ -67,9 +67,6 @@ function Home() {
      const pngUrl = canvas
        .toDataURL("image/png")
        .replace("image/png", "image/octet-stream");
-    //console.log(pngUrl)
-
-    //setblobDown(pngUrl)
   }
 
   const postPicture =  (b64) =>{
@@ -116,18 +113,26 @@ function Home() {
      };
 
     // Perform the POST request
-      fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
-          .then(response => response.text())
-          .then(result => {
-              console.log(result);
-              let res = result
-              setData(res.data)
-              //event.sender.send('form-submission-successful', result);
-          })
-          .catch(error => {
-              console.log('error', error);
-              //event.sender.send('form-submission-failed', error);
-          });
+      // fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
+      //     .then(response => response.text())
+      //     .then(result => {
+      //         console.log(result);
+      //         let res = result
+      //         setData(res.data)
+      //         //event.sender.send('form-submission-successful', result);
+      //     })
+      //     .catch(error => {
+      //         console.log('error', error);
+      //         //event.sender.send('form-submission-failed', error);
+      //     });
+  }
+  const restart  = () =>{
+    const canvas  = document.querySelector('canvas')
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height); 
+    setStep(0)
+    setHasPhoto(false)
+
   }
   return (
     <div  className='App'>
@@ -143,11 +148,12 @@ function Home() {
       <div className={'countdown' + (step === 2 ? '' : ' hidden')}>
         <img src={countdown}/>
       </div>
-      <div className={'result' + (hasPhoto ? ' hasPhoto' : '')}>
+      <div className={'result' + (hasPhoto ? ' hasPhoto' : ' hidden')}>
         <canvas ref={photoRef}></canvas>
         <a id="link">download</a>
         <p className='down-text'>Download your Picture!</p>
         <QRCodeSVG value={'https://www.google.com/'}  size={156}/>
+        <button className='restart'  onClick={restart}>RESTART</button>
       </div>
     </div>
   )
