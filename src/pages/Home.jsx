@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { QRCodeSVG } from 'qrcode.react'
 import { base64StringToBlob } from 'blob-util';
 import touchIcon from "../assets/touch_icon.png"
@@ -25,8 +25,9 @@ function Home() {
       .catch( err =>  {
         console.error(err)
       })
-      setStep(1)
-
+  }
+  const start = () =>{
+    setStep(1)
   }
   const takePhoto =  ()  =>{
 
@@ -134,9 +135,13 @@ function Home() {
     setHasPhoto(false)
 
   }
+  useEffect(() => {
+      getVideo()
+  }, [])
+  
   return (
     <div  className='App'>
-      <div className={'startScreen' + (step === 0 ? '' : ' hidden')} onClick={getVideo} >
+      <div className={'startScreen' + (step === 0 ? '' : ' hidden')} onClick={start} >
         <img src={press} className='pressStart'/>
         <img src={touchIcon} className='touch'/>
       </div>
