@@ -1,0 +1,143 @@
+body {
+  background: linear-gradient(to bottom, #540184, #bf018c);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.hidden{
+  display: none!important;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+App{
+  min-height: 100vh;
+  position: relative;
+  background-color: linear-gradient(45deg, #540184, #bf018c);
+}
+.camera {
+  position: absolute;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 20px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  gap: 20px;
+}
+.result{
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.4s;
+}
+.result.hasPhoto{
+  left: 0;
+}
+
+video{
+  width: 63%;
+  max-width: 100%;
+  height: auto;
+}
+.button{
+  margin-top: 2
+  40px;
+  width: 8%;
+}
+
+button:hover{
+  background-position: 100%;
+}
+
+.startScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 15;
+}
+
+img.pressStart {
+  width: 30%;
+}
+img.touch {
+  width: 11%;
+}
+.result.hasPhoto {
+  position: absolute;
+}
+p.texst {
+  height: 30px;
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+.countdown {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result.hasPhoto {
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*
+  background-image: url(/src/assets/Frame_1.png);
+  background-size: cover;
+  background-repeat: no-repeat;*/
+  background: linear-gradient(to bottom, #540184, #bf018c);
+}
+
+img.frame {
+  position: absolute;
+  z-index: 15;
+  width: 100%;
+  height: 100%;
+}
+
+a#link {
+  position: absolute;
+  color: #fff;
+  background: #d56a98;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: none;
+}
+
+canvas {
+  zoom: 0.6;
+  margin-bottom: 120px;
+}
+
+svg {
+  padding: 10px;
+  background: #fff;
+}
+.down-text{
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 31px;
+}
