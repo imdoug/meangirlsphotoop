@@ -147,7 +147,7 @@ function Home() {
         <canvas ref={photoRef}></canvas>
         <a id="link">download</a>
         <p className='down-text'>Download your Picture!</p>
-        <QRCodeSVG value={'https://www.google.com/'}  size={188}/>
+        <QRCodeSVG value={'https://www.google.com/'}  size={156}/>
       </div>
     </div>
   )
