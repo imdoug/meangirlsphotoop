@@ -16,8 +16,19 @@ function Home() {
   const [data, setData]  =  useState(false)
 
   const getVideo = () =>{
+    let width;
+    let height;
+
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.write("mobile");
+      width =  414  
+      height = 238
+    }else{
+      width =  238  
+      height = 414
+    }
     navigator.mediaDevices
-      .getUserMedia({ video:{width: 414, height:238}}).then( stream =>{
+      .getUserMedia({ video:{width: width, height:height}}).then( stream =>{
         let video =  videoRef.current;
         video.srcObject = stream;
         video.play();
