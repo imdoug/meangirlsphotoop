@@ -31,7 +31,7 @@ body.v2{
   bottom: 0;
   right: 0;
   background-image: url(/src/assets/photoPreviewBG.png);
-  background-size: contain;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -67,7 +67,7 @@ video {
   width: 100%;
   z-index: 15;
   background-image: url(/src/assets/startBG.png);
-  background-size: cover;
+  background-size: 100% auto;
   background-repeat: no-repeat;
 }
 
@@ -141,4 +141,6 @@ button.restart {
   width: 120px;
   height: 120px;
   background-color: transparent;
+  position: absolute;
+  bottom: 55px;
 }
