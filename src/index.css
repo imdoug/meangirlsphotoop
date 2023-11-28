@@ -50,10 +50,10 @@ body.v2{
 }
 
 video {
-  width: 1000px;
-  height: 706px;
+  width: 900px;
+  height: 600px;
   position: absolute;
-  left: 81px;
+  left: 50px;
 }
 
 .startScreen {
