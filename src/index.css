@@ -31,8 +31,9 @@ body.v2{
   bottom: 0;
   right: 0;
   background-image: url(/src/assets/photoPreviewBG.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 .result{
   position: fixed;
@@ -53,7 +54,7 @@ video {
   width: 900px;
   height: 620px;
   position: absolute;
-  left: -30px;
+  left: -32px;
 }
 
 .startScreen {
