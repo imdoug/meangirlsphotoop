@@ -28,7 +28,7 @@ function Home() {
     //   height = 414
     // }
     navigator.mediaDevices
-      .getUserMedia({ video:{width: 481, height:320}}).then( stream =>{
+      .getUserMedia({ video:{width: 582, height:406}}).then( stream =>{
         let video =  videoRef.current;
         video.srcObject = stream;
         video.play();
