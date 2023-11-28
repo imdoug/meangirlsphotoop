@@ -68,6 +68,7 @@ function Home() {
   function photoCountdown() {
     setStep(2)
     const myTimeout = setTimeout(takePhoto,2500);
+    restart()
   }
 
   const generateDownloadLink = (b) =>{
@@ -124,27 +125,34 @@ function Home() {
          body: formData
      };
 
-    // Perform the POST request
-      // fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
-      //     .then(response => response.text())
-      //     .then(result => {
-      //         //console.log(result);
-      //         //let res = result
-      //         //setData(res.data)
-      //         //event.sender.send('form-submission-successful', result);
-      //     })
-      //     .catch(error => {
-      //         //console.log('error', error);
-      //         //event.sender.send('form-submission-failed', error);
-      //     });
+    //Perform the POST request
+      fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
+          .then(response => response.text())
+          .then(result => {
+              //console.log(result);
+              //let res = result
+              //setData(res.data)
+              //event.sender.send('form-submission-successful', result);
+          })
+          .catch(error => {
+              //console.log('error', error);
+              //event.sender.send('form-submission-failed', error);
+          });
   }
   const restart  = () =>{
-    const canvas  = document.querySelector('canvas')
-    const context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height); 
-    setStep(0)
-    setHasPhoto(false)
-
+    const myTimeout = setTimeout(() => {
+      const canvas  = document.querySelector('canvas')
+      const context = canvas.getContext('2d');
+      context.clearRect(0, 0, canvas.width, canvas.height); 
+      setStep(0)
+      setHasPhoto(false)
+      let body = document.querySelector('body')
+      if(body.classList.contains('v2')){
+        body.classList.remove("v2");
+      }else{
+        body.classList.add("v2");
+      }
+    }, 8000);
   }
   useEffect(() => {
       getVideo()
@@ -158,7 +166,7 @@ function Home() {
       </div>
       <div className={"camera"  + (step === 1 ? '' : ' hidden')}>
         <video ref={videoRef}></video>
-        <div class="btnPhoto" onClick={photoCountdown}></div>
+        <div className="btnPhoto" onClick={photoCountdown}></div>
       </div>
       <div className={'countdown' + (step === 2 ? '' : ' hidden')}>
         <img src={countdown}/>
