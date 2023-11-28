@@ -51,9 +51,9 @@ body.v2{
 
 video {
   width: 900px;
-  height: 600px;
+  height: 620px;
   position: absolute;
-  left: 50px;
+  left: 0px;
 }
 
 .startScreen {
