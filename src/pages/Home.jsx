@@ -28,7 +28,7 @@ function Home() {
     //   height = 414
     // }
     navigator.mediaDevices
-      .getUserMedia({ video:{width: 414, height:238}}).then( stream =>{
+      .getUserMedia({ video:{width: 481, height:320}}).then( stream =>{
         let video =  videoRef.current;
         video.srcObject = stream;
         video.play();
@@ -55,7 +55,7 @@ function Home() {
     let ctx = photo.getContext('2d')
     let drawing = new Image();
     ctx.drawImage(video, 230, 163 , 600, 1025)
-    drawing.src = "https://assets-private.eventfinity.co/materials/2677251/original/Frame_1.png"; // can also be a remote URL e.g. http://
+    drawing.src = "https://assets-private.eventfinity.co/materials/2677991/original/mean-girls_png-1.png"; // can also be a remote URL e.g. http://
     drawing.crossOrigin="anonymous"
     drawing.onload = function(){
       ctx.drawImage(drawing,0, 0,  width,  height)
@@ -125,18 +125,18 @@ function Home() {
      };
 
     // Perform the POST request
-      fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
-          .then(response => response.text())
-          .then(result => {
-              //console.log(result);
-              //let res = result
-              //setData(res.data)
-              //event.sender.send('form-submission-successful', result);
-          })
-          .catch(error => {
-              //console.log('error', error);
-              //event.sender.send('form-submission-failed', error);
-          });
+      // fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
+      //     .then(response => response.text())
+      //     .then(result => {
+      //         //console.log(result);
+      //         //let res = result
+      //         //setData(res.data)
+      //         //event.sender.send('form-submission-successful', result);
+      //     })
+      //     .catch(error => {
+      //         //console.log('error', error);
+      //         //event.sender.send('form-submission-failed', error);
+      //     });
   }
   const restart  = () =>{
     const canvas  = document.querySelector('canvas')
@@ -157,9 +157,8 @@ function Home() {
         <img src={touchIcon} className='touch'/>
       </div>
       <div className={"camera"  + (step === 1 ? '' : ' hidden')}>
-        <p className='texst'>Let's Take a Photo!</p>
         <video ref={videoRef}></video>
-        <img src={takePhotoIcon} onClick={photoCountdown} className='button'/>
+        <div class="btnPhoto" onClick={photoCountdown}></div>
       </div>
       <div className={'countdown' + (step === 2 ? '' : ' hidden')}>
         <img src={countdown}/>
@@ -167,9 +166,7 @@ function Home() {
       <div className={'result' + (hasPhoto ? ' hasPhoto' : ' hidden')}>
         <canvas ref={photoRef}></canvas>
         <a id="link">download</a>
-        <p className='down-text'>Download your Picture!</p>
-        <QRCodeSVG value={'https://www.google.com/'}  size={156}/>
-        <button className='restart'  onClick={restart}>RESTART</button>
+        <button className='restart hidden'  onClick={restart}>RESTART</button>
       </div>
     </div>
   )
