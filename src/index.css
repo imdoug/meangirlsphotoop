@@ -69,6 +69,7 @@ video {
   background-image: url(/src/assets/startBG.png);
   background-size: 100% auto;
   background-repeat: no-repeat;
+  background-color: #FF69B4;
 }
 
 img.pressStart {
@@ -98,7 +99,9 @@ img.touch {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #540184, #bf018c);
+  background-image: url('/src/assets/final.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 img.frame {

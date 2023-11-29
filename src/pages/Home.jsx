@@ -71,16 +71,16 @@ function Home() {
     restart()
   }
 
-  const generateDownloadLink = (b) =>{
-    let file = URL.createObjectURL(b)
-    let a  = document.getElementById('link')
-    a.download =  'Mean_Girls_2024.png'
-    a.href = file;
-    const canvas = document.querySelector('canvas');
-     const pngUrl = canvas
-       .toDataURL("image/png")
-       .replace("image/png", "image/octet-stream");
-  }
+  // const generateDownloadLink = (b) =>{
+  //   let file = URL.createObjectURL(b)
+  //   let a  = document.getElementById('link')
+  //   a.download =  'Mean_Girls_2024.png'
+  //   a.href = file;
+  //   const canvas = document.querySelector('canvas');
+  //    const pngUrl = canvas
+  //      .toDataURL("image/png")
+  //      .replace("image/png", "image/octet-stream");
+  // }
 
   const postPicture =  (b64) =>{
     // PUBLIC_READ_ONLY_TOKEN = 's2tbYsgFUTyOz4NluIu8OupD9leOqZMWvP31Veat'
@@ -96,7 +96,7 @@ function Home() {
      const contentType = 'image/png';
      const blob = base64StringToBlob(b64, contentType);
     
-     generateDownloadLink(blob)
+    //  generateDownloadLink(blob)
 
      //const filename = path.basename(imagePath);
 
@@ -125,7 +125,7 @@ function Home() {
          body: formData
      };
 
-    //Perform the POST request
+    // Perform the POST request
       fetch("https://api2.eventfinity.co/api/v1/public/events/107551/photostreams/64731/photos", requestOptions)
           .then(response => response.text())
           .then(result => {
@@ -172,9 +172,7 @@ function Home() {
         <img src={countdown}/>
       </div>
       <div className={'result' + (hasPhoto ? ' hasPhoto' : ' hidden')}>
-        <canvas ref={photoRef}></canvas>
-        <a id="link">download</a>
-        <button className='restart hidden'  onClick={restart}>RESTART</button>
+        <canvas className='hidden' ref={photoRef}></canvas> 
       </div>
     </div>
   )
