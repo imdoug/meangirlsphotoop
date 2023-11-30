@@ -51,9 +51,10 @@ body.v2{
 }
 
 video {
-  width: 700px;
+  width: 890px;
   height: 570px;
   top: 215px;
+  left: 200px;
   position: absolute;
 }
 
