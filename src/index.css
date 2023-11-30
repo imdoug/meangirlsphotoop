@@ -53,6 +53,7 @@ body.v2{
 video {
   width: 900px;
   height: 570px;
+  top: 215px;
   position: absolute;
   left: -32px;
 }
