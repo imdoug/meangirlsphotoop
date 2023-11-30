@@ -146,12 +146,6 @@ function Home() {
       context.clearRect(0, 0, canvas.width, canvas.height); 
       setStep(0)
       setHasPhoto(false)
-      let body = document.querySelector('body')
-      if(body.classList.contains('v2')){
-        body.classList.remove("v2");
-      }else{
-        body.classList.add("v2");
-      }
     }, 8000);
   }
   useEffect(() => {
