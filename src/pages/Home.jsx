@@ -40,14 +40,15 @@ function Home() {
     photo.height = height
 
     let ctx = photo.getContext('2d')
-    let drawing = new Image();
-    ctx.drawImage(video, 230, 163 , 600, 1025)
-    drawing.src = "https://assets-private.eventfinity.co/materials/2678571/original/Frame_1.png"; // can also be a remote URL e.g. http://
-    drawing.crossOrigin="anonymous"
-    drawing.onload = function(){
-      ctx.drawImage(drawing,0, 0,  width,  height)
+    //let drawing = new Image();
+    //ctx.drawImage(video, 230, 163 , 600, 1025)
+    //drawing.src = "https://assets-private.eventfinity.co/materials/2678571/original/Frame_1.png"; // can also be a remote URL e.g. http://
+    //drawing.crossOrigin="anonymous"
+    //drawing.onload = function(){
+      //ctx.drawImage(drawing,0, 0,  width,  height)
+      ctx.drawImage(video, 0, 0 , width, height)
       postPicture(photo.toDataURL().slice(22))
-    }
+    //}
     setHasPhoto(true)
     setStep(3)
   }
