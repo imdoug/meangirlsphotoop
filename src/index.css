@@ -54,12 +54,12 @@ video {
   /* deskptop 
   top: 265px;
   left: 55px;
+  transform: rotate(90deg);
   */
 
   /*  ipad */
   top: 90px;
   left: 190px; 
-  transform: rotate(90deg);
   position: absolute;
   z-index: -1;
 }
