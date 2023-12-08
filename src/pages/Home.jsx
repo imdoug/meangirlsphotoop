@@ -131,6 +131,7 @@ function Home() {
         <img src={touchIcon} className='touch'/>
       </div>
       <div className={"camera"  + (step === 1 ? '' : ' hidden')}>
+        <div class="pictime"></div>
         <video ref={videoRef}></video>
         <div className="btnPhoto" onClick={photoCountdown}></div>
       </div>

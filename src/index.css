@@ -150,7 +150,19 @@ button.restart {
 .btnPhoto {
   width: 120px;
   height: 120px;
-  background-color: white;
   position: absolute;
   bottom: 55px;
+  background-image: url('/src/assets/button.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.pictime{
+   width: 100%;
+    background-image: url(/src/assets/pictime.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 30px;
+    left: 210px;
+    height: 37px;
 }
