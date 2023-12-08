@@ -145,7 +145,7 @@ button.restart {
 .btnPhoto {
   width: 120px;
   height: 120px;
-  background-color: transparent;
+  background-color: white;
   position: absolute;
   bottom: 55px;
 }
