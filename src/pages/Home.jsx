@@ -90,18 +90,18 @@ function Home() {
      };
 
     // Perform the POST request
-      fetch(`${import.meta.env.VITE_PUBLIC_API_BASE_URL}/api/v1/public/events/${import.meta.env.VITE_PUBLIC_EVENT_ID}/photostreams/${import.meta.env.VITE_PUBLIC_PHOTOSTREAM_ID}/photos`, requestOptions)
-          .then(response => response.text())
-          .then(result => {
-              //console.log(result);
-              //let res = result
-              //setData(res.data)
-              //event.sender.send('form-submission-successful', result);
-          })
-          .catch(error => {
-              console.log('error', error);
-              //event.sender.send('form-submission-failed', error);
-          });
+      // fetch(`${import.meta.env.VITE_PUBLIC_API_BASE_URL}/api/v1/public/events/${import.meta.env.VITE_PUBLIC_EVENT_ID}/photostreams/${import.meta.env.VITE_PUBLIC_PHOTOSTREAM_ID}/photos`, requestOptions)
+      //     .then(response => response.text())
+      //     .then(result => {
+      //         //console.log(result);
+      //         //let res = result
+      //         //setData(res.data)
+      //         //event.sender.send('form-submission-successful', result);
+      //     })
+      //     .catch(error => {
+      //         console.log('error', error);
+      //         //event.sender.send('form-submission-failed', error);
+      //     });
   }
   const restart  = () =>{
     // SHOW FINAL IMAGE AND RESTART
