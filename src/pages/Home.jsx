@@ -40,14 +40,20 @@ function Home() {
     photo.height = height
 
     let ctx = photo.getContext('2d')
-    //let drawing = new Image();
-    //ctx.drawImage(video, 230, 163 , 600, 1025)
-    //drawing.src = "https://assets-private.eventfinity.co/materials/2678571/original/Frame_1.png"; // can also be a remote URL e.g. http://
-    //drawing.crossOrigin="anonymous"
-    //drawing.onload = function(){
-      //ctx.drawImage(drawing,0, 0,  width,  height)
-      ctx.drawImage(video, 0, 0 , width, height)
-      postPicture(photo.toDataURL().slice(22))
+    // WITH OVERLAY 
+    let drawing = new Image();
+    ctx.drawImage(video, 230, 150 , 600, 1025)
+    drawing.src = "https://assets-private.eventfinity.co/materials/2679521/original/frame_new02.png"; // can also be a remote URL e.g. http://
+    drawing.crossOrigin="anonymous"
+    drawing.onload = function(){
+    ctx.drawImage(drawing,0, 0,  width,  height)
+    postPicture(photo.toDataURL().slice(22))
+    }
+
+
+    // NO OVERLAY TEST
+    // ctx.drawImage(video, 0, 0 , width, height)
+    // postPicture(photo.toDataURL().slice(22))
     //}
     setHasPhoto(true)
     setStep(3)
@@ -65,6 +71,7 @@ function Home() {
      // Convert the image data to a Blob object
      const contentType = 'image/png';
      const blob = base64StringToBlob(b64, contentType);
+     //console.log(b64)
 
      // Create a new FormData instance
      const formData = new FormData();
@@ -90,18 +97,18 @@ function Home() {
      };
 
     // Perform the POST request
-      // fetch(`${import.meta.env.VITE_PUBLIC_API_BASE_URL}/api/v1/public/events/${import.meta.env.VITE_PUBLIC_EVENT_ID}/photostreams/${import.meta.env.VITE_PUBLIC_PHOTOSTREAM_ID}/photos`, requestOptions)
-      //     .then(response => response.text())
-      //     .then(result => {
-      //         //console.log(result);
-      //         //let res = result
-      //         //setData(res.data)
-      //         //event.sender.send('form-submission-successful', result);
-      //     })
-      //     .catch(error => {
-      //         console.log('error', error);
-      //         //event.sender.send('form-submission-failed', error);
-      //     });
+      fetch(`${import.meta.env.VITE_PUBLIC_API_BASE_URL}/api/v1/public/events/${import.meta.env.VITE_PUBLIC_EVENT_ID}/photostreams/${import.meta.env.VITE_PUBLIC_PHOTOSTREAM_ID}/photos`, requestOptions)
+          .then(response => response.text())
+          .then(result => {
+              //console.log(result);
+              //let res = result
+              //setData(res.data)
+              //event.sender.send('form-submission-successful', result);
+          })
+          .catch(error => {
+              console.log('error', error);
+              //event.sender.send('form-submission-failed', error);
+          });
   }
   const restart  = () =>{
     // SHOW FINAL IMAGE AND RESTART
