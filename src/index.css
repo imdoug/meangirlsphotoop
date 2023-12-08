@@ -155,6 +155,7 @@ button.restart {
   background-image: url('/src/assets/button.png');
   background-size: contain;
   background-repeat: no-repeat;
+  right: 95px;
 }
 .pictime{
    width: 100%;
