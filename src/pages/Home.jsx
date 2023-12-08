@@ -15,7 +15,7 @@ function Home() {
 
   const getVideo = () =>{
     navigator.mediaDevices
-      .getUserMedia({ video:{width: 700, height:420}}).then( stream =>{
+      .getUserMedia({ video:{width: 700, height:390}}).then( stream =>{
         let video =  videoRef.current;
         video.srcObject = stream;
         video.play();
