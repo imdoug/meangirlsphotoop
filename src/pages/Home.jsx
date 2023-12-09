@@ -3,6 +3,8 @@ import { base64StringToBlob } from 'blob-util';
 import touchIcon from "../assets/touch_icon.png"
 import press from"../assets/press-to-start.png"
 import countdown from '../assets/giphy_countdown.gif'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCamera } from '@fortawesome/free-solid-svg-icons'
 
 
 function Home() {
@@ -133,7 +135,9 @@ function Home() {
       <div className={"camera"  + (step === 1 ? '' : ' hidden')}>
         <div class="pictime"></div>
         <video ref={videoRef}></video>
-        <div className="btnPhoto" onClick={photoCountdown}></div>
+        <div className="btnPhoto" onClick={photoCountdown}>
+        <FontAwesomeIcon icon={faCamera} color='white' className="camera-icon"/>
+        </div>
       </div>
       <div className={'countdown' + (step === 2 ? '' : ' hidden')}>
         <img src={countdown}/>

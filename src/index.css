@@ -157,8 +157,14 @@ button.restart {
   background-repeat: no-repeat;
   right: 95px;
   animation: pulse 1s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+}
+.camera-icon{
+  height: 40px;
 }
 .pictime{
    width: 100%;
